@@ -1,0 +1,1 @@
+# flux-sops-workload-identity
