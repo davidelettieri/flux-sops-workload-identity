@@ -13,15 +13,6 @@ resource keyVault 'Microsoft.KeyVault/vaults@2023-02-01' = {
     tenantId: tenant().tenantId
     accessPolicies: [
       {
-        objectId: '104b95e3-9621-4be5-b2a0-32dd8b61f5d0'
-        tenantId: tenant().tenantId
-        permissions: {
-          keys: [ 
-            'all'
-          ]
-        }
-      }
-      {
         objectId: managedIdentityObjectId
         tenantId: tenant().tenantId
         permissions: {
