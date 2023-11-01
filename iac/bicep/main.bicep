@@ -14,3 +14,21 @@ module aks 'aks.bicep' = {
     location: location
   }
 }
+
+module managedIdentity 'mi.bicep' = {
+  name: 'mi-module'
+  scope: rg
+  params: {
+    location: location
+    aksIssuerURL: aks.outputs.oidcIssuerURL
+  }
+}
+
+module keyVault 'kv.bicep' = {
+  name: 'kv-module'
+  scope: rg
+  params: {
+    location: location
+    managedIdentityObjectId: managedIdentity.outputs.objectId
+  }
+}

@@ -12,10 +12,6 @@ resource aks 'Microsoft.ContainerService/managedClusters@2023-08-01' = {
   }
   properties: {
     kubernetesVersion: '1.26.6'
-    aadProfile: {
-      managed: true
-      enableAzureRBAC: true
-    }
     agentPoolProfiles: [
       {
         name: 'system'
@@ -27,12 +23,7 @@ resource aks 'Microsoft.ContainerService/managedClusters@2023-08-01' = {
         osSKU: 'AzureLinux'
       }
     ]
-    disableLocalAccounts: true
-    enableRBAC: true
     dnsPrefix: 'my-aks-dns'
-    servicePrincipalProfile: {
-      clientId: 'msi'
-    }
     oidcIssuerProfile: {
       enabled: true
     }
@@ -46,3 +37,5 @@ resource aks 'Microsoft.ContainerService/managedClusters@2023-08-01' = {
     }
   }
 }
+
+output oidcIssuerURL string = aks.properties.oidcIssuerProfile.issuerURL
