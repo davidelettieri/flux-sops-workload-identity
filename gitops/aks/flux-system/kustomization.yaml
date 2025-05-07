@@ -4,6 +4,6 @@ resources:
 - gotk-components.yaml
 - gotk-sync.yaml
 
-# patches:
-#   - path: patches/kustomize-controller-deployment.yaml
-#   - path: patches/kustomize-controller-service-account.yaml
+patches:
+  - path: patches/kustomize-controller-deployment.yaml
+  - path: patches/kustomize-controller-service-account.yaml
