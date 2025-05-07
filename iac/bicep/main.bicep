@@ -2,7 +2,7 @@ param location string = 'westeurope'
 
 targetScope = 'subscription'
 
-resource rg 'Microsoft.Resources/resourceGroups@2023-07-01' = {
+resource rg 'Microsoft.Resources/resourceGroups@2025-03-01' = {
   name: 'flux-workload-identity-post'
   location: location
 }

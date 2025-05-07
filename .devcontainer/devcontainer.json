@@ -10,6 +10,9 @@
 		},
 		"ghcr.io/jsburckhardt/devcontainer-features/flux:1": {}
 	},
+	"runArgs": [
+		"--userns=keep-id"
+	],
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -17,7 +20,8 @@
 				"redhat.vscode-yaml"
 			]
 		}
-	}
+	},
+	"containerUser": "vscode"
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},

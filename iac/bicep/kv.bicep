@@ -2,7 +2,7 @@ param location string
 
 param managedIdentityObjectId string
 
-resource keyVault 'Microsoft.KeyVault/vaults@2023-02-01' = {
+resource keyVault 'Microsoft.KeyVault/vaults@2024-11-01' = {
   name: 'my-kv-${uniqueString(resourceGroup().id)}'
   location: location
   properties: {
@@ -26,7 +26,7 @@ resource keyVault 'Microsoft.KeyVault/vaults@2023-02-01' = {
   }
 }
 
-resource key 'Microsoft.KeyVault/vaults/keys@2023-02-01' = {
+resource key 'Microsoft.KeyVault/vaults/keys@2024-11-01' = {
   name: 'encryption-key'
   parent: keyVault
   properties: {
