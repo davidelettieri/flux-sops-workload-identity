@@ -1,6 +1,6 @@
 param location string
 
-resource aks 'Microsoft.ContainerService/managedClusters@2023-08-01' = {
+resource aks 'Microsoft.ContainerService/managedClusters@2025-02-01' = {
   name: 'my-aks'
   location: location
   identity: {
@@ -11,7 +11,7 @@ resource aks 'Microsoft.ContainerService/managedClusters@2023-08-01' = {
     tier: 'Free'
   }
   properties: {
-    kubernetesVersion: '1.26.6'
+    kubernetesVersion: '1.32'
     agentPoolProfiles: [
       {
         name: 'system'
